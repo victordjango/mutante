@@ -12,7 +12,7 @@ En donde recibirás como parámetro un array de Strings que representan cada fil
 de (NxN) con la secuencia del ADN. Las letras de los Strings solo pueden ser: (A,T,C,G), las
 cuales representa cada base nitrogenada del ADN.
 
-*No Mutante
+No Mutante
 
 A T G C G A
 
@@ -26,9 +26,7 @@ G C G T C A
 
 T C A C T G
 
-
-
-*Mutante
+Mutante
 
 A T G C G A
 
@@ -73,7 +71,7 @@ Nivel 3:
 Anexar una base de datos, la cual guarde los ADN’s verificados con la API.
 Solo 1 registro por ADN.
 Exponer un servicio extra “/stats” que devuelva un Json con las estadísticas de las
-verificaciones de ADN: {“count_mutant_dna”:40, “count_human_dna”:100: “ratio”:0.4}
+verificaciones de ADN: {“count_mutant_dna”:40, “count_human_dna”: 100, “ratio”:0.4}
 Tener en cuenta que la API puede recibir fluctuaciones agresivas de tráfico (Entre 100 y 1
 millón de peticiones por segundo).
 Test-Automáticos, Code coverage > 80%.
@@ -84,3 +82,26 @@ Entregar:
 ● Instrucciones de cómo ejecutar el programa o la API. (Para Nivel 2 y 3: En README de
 github).
 ● URL de la API (Nivel 2 y 3)
+
+#Resolución
+
+Para la resolución se usaron las siguientes herramientas  
+.Visual Studio 2019
+.Net Core 2.2
+.AWS Toolkit for Visual Studio
+.Nuget Packages
+.Swagger
+.Net Core Api
+.Net Regular Expressions
+.xUnitTest
+.RDS SQL Server
+
+La api se puede testear con la interfaz de swagger, hosteado sobre la siguiente url
+
+http://testmutante-prod.us-east-2.elasticbeanstalk.com
+
+Se adjunta el script de la base de datos SQL Server. En el caso de necesitar acceso a la BD envienme un mail a victorfernan@hotmail.com
+
+Se adjunta imagen de los test unitarios.
+
+
