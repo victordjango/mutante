@@ -11,19 +11,9 @@ namespace myMicroservice.Logic
     /// <summary>
     /// Clase con la logica para detectar si una matriz de  adns es un mutante o no
     /// </summary>
-    public class MutanBsn
+    public class MutanBsn : IMutanBsn
     {
-        public MessageResponse GetApiResultMessageResponse(bool isMutant)
-        {
-            var messageResponse = new MessageResponse();
-
-            messageResponse.Success = isMutant;
-            messageResponse.Message = isMutant ? "MUTANTE" : "NO MUTANTE";
-
-            return messageResponse;
-
-        }
-
+        
         private List<string> GetMutantsPatternsToCompare()
         {
             var patternList = new List<string>();
@@ -35,8 +25,25 @@ namespace myMicroservice.Logic
             return patternList;
         }
 
+        public MessageResponse GetApiResultMessageResponse(bool isMutant)
+        {
+            var messageResponse = new MessageResponse();
+
+            messageResponse.Success = isMutant;
+            messageResponse.Message = isMutant ? "MUTANTE" : "NO MUTANTE";
+
+            return messageResponse;
+        }
+
+        public MessageResponse GeneralValidation(MutantDnaRequest request)
+        {
+            return DnaValidator.GeneralValidation(request);
+        }
         public bool IsMutant(List<string> dnas)
         {
+
+            dnas = DnaHelper.UpperDna(dnas);
+
             var muttantPatterns = new List<string>();               
             var verticalDnas = new List<string>();
             var diagonalDnas = new List<string>();
@@ -95,15 +102,11 @@ namespace myMicroservice.Logic
             dnaRepository.InsertDna(dnas, isMutant);
         }
 
-
         public MutantStatistic GetMutanDnaStatistics()
         {
             var dnaRepository = new DnaRepository();
 
             return dnaRepository.GetMutantStatistic();
         }
-
-
-
     }
 }

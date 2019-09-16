@@ -81,6 +81,8 @@ namespace myMicroservice.Logic
             {
                 //NORMALIZACION DE DNAS
                 var upperDna = DnaHelper.UpperDna(request.Dna.ToList());
+                request.Dna = upperDna;
+
 
                 //VALIDACION DE DNAS
                  apiValidation = DnaValidator.ValidateDna(upperDna);

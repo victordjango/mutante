@@ -14,6 +14,15 @@ namespace myMicroservice.Controllers
     [ApiController]
     public class MutantController : ControllerBase
     {
+
+        private readonly IMutanBsn _mutantBsn;
+
+        public MutantController(IMutanBsn mutantBsn)
+        {
+            _mutantBsn = mutantBsn;
+        }
+
+
         /// <summary>
         /// Metodo POST para determinar si un arreglo de Dnas representa el dna de un mutante o de una persona.
         /// </summary>
@@ -23,7 +32,7 @@ namespace myMicroservice.Controllers
         public IActionResult Mutant(MutantDnaRequest request)
         {
             //VALIDACION DE ADNS
-            var apiValidation = DnaValidator.GeneralValidation(request);
+            var apiValidation = _mutantBsn.GeneralValidation(request);
 
             if (apiValidation.Success == false)
             {
@@ -32,16 +41,14 @@ namespace myMicroservice.Controllers
             else
                 {
 
-                //OBTENER DNA
-                var mutanBsn = new MutanBsn();
+                var dnas = request.Dna.ToList();
 
-                var dnas = DnaHelper.UpperDna(request.Dna.ToList());
-                var isMutant = mutanBsn.IsMutant(dnas);
-
-                var apiResult = mutanBsn.GetApiResultMessageResponse(isMutant);
+                //OBTENER DNA                              
+                var isMutant = _mutantBsn.IsMutant(dnas);
+                var apiResult = _mutantBsn.GetApiResultMessageResponse(isMutant);
 
                 //REGISTRAR (ASINCRONICAMENTE) => LA GRABACIÓN NO SE INVOLUCRA EN LA RESPUESTA
-                var task =Task.Run(() => mutanBsn.InsertDna(dnas, isMutant));  
+                var task =Task.Run(() => _mutantBsn.InsertDna(dnas, isMutant));  
 
                 if (apiResult.Success)
                     return Ok(apiResult);
