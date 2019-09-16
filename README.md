@@ -100,7 +100,7 @@ La api se puede testear con la interfaz de swagger, hosteado sobre la siguiente 
 
 http://testmutante-prod.us-east-2.elasticbeanstalk.com
 
-Se adjunta el script de la base de datos SQL Server. En el caso de necesitar acceso a la BD envienme un mail a victorfernan@hotmail.com
+Se adjunta el script de la base de datos SQL Server en el caso de querer levantar el ambiente de manera local.
 
 Se adjunta imagen de los test unitarios.
 
