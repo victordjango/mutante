@@ -83,18 +83,18 @@ Entregar:
 github).
 ● URL de la API (Nivel 2 y 3)
 
-#Resolución
+## Resolución
 
 Para la resolución se usaron las siguientes herramientas  
-.Visual Studio 2019
-.Net Core 2.2
-.AWS Toolkit for Visual Studio
-.Nuget Packages
-.Swagger
-.Net Core Api
-.Net Regular Expressions
-.xUnitTest
-.RDS SQL Server
+# Visual Studio 2019
+# Net Core 2.2
+# AWS Toolkit for Visual Studio
+# Nuget Packages
+# Swagger
+# Net Core Api
+# Net Regular Expressions
+# xUnitTest
+# RDS SQL Server
 
 La api se puede testear con la interfaz de swagger, hosteado sobre la siguiente url
 
