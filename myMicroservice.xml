@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>myMicroservice</name>
+    </assembly>
+    <members>
+        <member name="M:myMicroservice.Controllers.MutantController.Mutant(myMicroservice.Model.MutantDnaRequest)">
+            <summary>
+            Metodo POST para determinar si un arreglo de Dnas representa el dna de un mutante o de una persona.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:myMicroservice.Controllers.MutantController.GetStats">
+            <summary>
+            Metodo GET para recuperar una estadistica de los dnas informados.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:myMicroservice.Logic.DnaHelper">
+            <summary>
+            Clases con funcionalidad para el manejo de los DNAS (Horizontales, Veritales , Diagonales)
+            </summary>
+        </member>
+        <member name="M:myMicroservice.Logic.DnaHelper.GetVerticalDnas(System.Collections.Generic.List{System.String})">
+            <summary>
+            Metodo que recupera la lista vertial de los Dnas
+            </summary>
+            <param name="dnas"></param>
+            <returns>Lista en vertial de los dnas</returns>
+        </member>
+        <member name="M:myMicroservice.Logic.DnaHelper.GetDiagonalDnas(System.Collections.Generic.List{System.String})">
+            <summary>
+            Metodo que recupera la lista de Dnas en Diagonal
+            </summary>
+            <param name="dnas"></param>
+            <returns></returns>
+        </member>
+        <member name="M:myMicroservice.Logic.DnaHelper.UpperDna(System.Collections.Generic.List{System.String})">
+            <summary>
+            Metodo para normalizar los dnas en UPPERCASE
+            </summary>
+            <param name="dnas"></param>
+            <returns></returns>
+        </member>
+        <member name="T:myMicroservice.Logic.DnaValidator">
+            <summary>
+            Clase con validaciones de ingreso de DNAs
+            </summary>
+        </member>
+        <member name="M:myMicroservice.Logic.DnaValidator.ValidateDna(System.Collections.Generic.List{System.String})">
+            <summary>
+            Clase para validar un ingreso correcto de Dnas
+            </summary>
+            <param name="dnas">Lista de Dnas</param>
+            <returns>Respuesta con mensaje de validación</returns>
+        </member>
+        <member name="M:myMicroservice.Logic.DnaValidator.IsSquareDnaMatrix(System.Collections.Generic.List{System.String})">
+            <summary>
+            Clase que verifica si una cadena de DNAs es cuadrada
+            </summary>
+            <param name="dnas"></param>
+            <returns></returns>
+        </member>
+        <member name="T:myMicroservice.Logic.MutanBsn">
+            <summary>
+            Clase con la logica para detectar si una matriz de  adns es un mutante o no
+            </summary>
+        </member>
+    </members>
+</doc>
