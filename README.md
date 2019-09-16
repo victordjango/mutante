@@ -1,8 +1,10 @@
 ## Mutante by Vic
 
 Examen Mercadolibre
+
 Magneto quiere reclutar la mayor cantidad de mutantes para poder luchar
 contra los X-Men.
+
 Te ha contratado a ti para que desarrolles un proyecto que detecte si un
 humano es mutante basándose en su secuencia de ADN.
 
@@ -10,33 +12,51 @@ En donde recibirás como parámetro un array de Strings que representan cada fil
 de (NxN) con la secuencia del ADN. Las letras de los Strings solo pueden ser: (A,T,C,G), las
 cuales representa cada base nitrogenada del ADN.
 
-No Mutante
+*No Mutante
+
 A T G C G A
+
 C A G T G C
+
 T T A T T T
+
 A G A C G G
+
 G C G T C A
+
 T C A C T G
 
 
-Mutante
+
+*Mutante
+
 A T G C G A
+
 C A G T G C
+
 T T A T G T
+
 A G A A G G
+
 C C C C T A
+
 T C A C T G
 
 Sabrás si un humano es mutante, si encuentras más de una secuencia de cuatro letras
 iguales, de forma oblicua, horizontal o vertical.
+
 Ejemplo (Caso mutante):
+
 String[] dna = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};
+
 En este caso el llamado a la función isMutant(dna) devuelve “true”.
 Desarrolla el algoritmo de la manera más eficiente posible.
+
 Desafíos:
 Nivel 1:
 Programa (en cualquier lenguaje de programación) que cumpla con el método pedido por
 Magneto.
+
 Nivel 2:
 Crear una API REST, hostear esa API en un cloud computing libre (Google App Engine,
 Amazon AWS, etc), crear el servicio “/mutant/” en donde se pueda detectar si un humano es
@@ -48,6 +68,7 @@ POST → /mutant/
 }
 En caso de verificar un mutante, debería devolver un HTTP 200-OK, en caso contrario un
 403-Forbidden
+
 Nivel 3:
 Anexar una base de datos, la cual guarde los ADN’s verificados con la API.
 Solo 1 registro por ADN.
@@ -56,6 +77,7 @@ verificaciones de ADN: {“count_mutant_dna”:40, “count_human_dna”:100: �
 Tener en cuenta que la API puede recibir fluctuaciones agresivas de tráfico (Entre 100 y 1
 millón de peticiones por segundo).
 Test-Automáticos, Code coverage > 80%.
+
 Entregar:
 
 ● Código Fuente (Para Nivel 2 y 3: En repositorio github).
